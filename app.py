@@ -42,7 +42,7 @@ if __name__ == '__main__':
     try:
         app.secret_key = os.environ['secret_key'] 
     except KeyError:
-        print "Please set (export) the secret_key environmental variable"
+        print "Please set (export secret_key=<secret_key>) the secret_key environmental variable"
 
     app.run(debug=True)
 
