@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     if 'username' in session:
-        return 'Logged in as %s' % escape(session['username'])
+        return 'Logged in as %s. ' % escape(session['username']) + 'Would you like to <a href="/logout">logout</a>?'
     else:
         response_cookie = make_response(render_template('hello.html'))
         response_cookie.set_cookie('username', 'the username')
@@ -26,12 +26,7 @@ def login():
     if request.method == 'POST':
         session['username'] = request.form['username']
         return redirect(url_for('index'))
-    return '''
-        <form action="" method="post">
-            <p><input type=text name=username>
-            <p><input type=submit value=Login>
-        </form>
-    '''
+    return render_template('login.html')
 
 @app.route('/logout')
 def logout():

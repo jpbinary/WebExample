@@ -50,22 +50,18 @@
 
         <!-- Main component for a primary marketing message or call to action -->
         <div class="jumbotron">
+            <form action="" method="post" role="form">
+                
+                <div class="form-group">
+                    <p><input type="text" class="form-control" placeholder="enter your username here" id="username" name=username></p>
+                </div>
 
-            {% if name %}
-                <p><h1>Hello {{ name }}</h1></p> 
-                <p> Welcome to this example page </p>
-
-            {% else %}
-                <p><h1>Hello User!</h1></p>
-                <p> Welcome to this example page </p>
-            {% endif %}
-            <p>
                 <span class="glyphicon glyphicon-user"></span>
-                <a class="btn btn-lg btn-primary" href="/login" role="button">Login »</a>
-            </p>
+                <button type="submit" value=Login class="btn">Submit Login</button>
+
+            </form>
         </div>
 
-    </div>
-
+    </div>    
     </body>
 </html>
